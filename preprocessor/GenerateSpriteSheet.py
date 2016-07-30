@@ -24,7 +24,7 @@ files_to_process = os.listdir('../raw_images')
 for current_filename in files_to_process:
     image_count = image_count + 1
     image_original = cv2.imread('../raw_images/' + current_filename)
-    current_filename = "p_" + current_filename[:-4] + ".png"
+    current_filename = current_filename[:-4]
 
     if image_original.shape[0] / image_original.shape[1] > max_ratio:
         img_small = cv2.resize(image_original, (math.floor(max_height * image_original.shape[1] / image_original.shape[0]), max_height))

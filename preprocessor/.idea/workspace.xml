@@ -23,20 +23,8 @@
       <file leaf-file-name="GetHists.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/GetHists.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="21" selection-end-column="26" />
-              <folding>
-                <element signature="e#0#10#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GenerateSpriteSheet.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/GenerateSpriteSheet.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
-              <caret line="28" column="43" selection-start-line="28" selection-start-column="43" selection-end-line="28" selection-end-column="43" />
+            <state relative-caret-position="323">
+              <caret line="28" column="38" selection-start-line="28" selection-start-column="38" selection-end-line="28" selection-end-column="38" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -51,6 +39,7 @@
       <list>
         <option value="$PROJECT_DIR$/GetThumbs.py" />
         <option value="$PROJECT_DIR$/GenerateSpriteSheet.py" />
+        <option value="$PROJECT_DIR$/GetPortraits.py" />
         <option value="$PROJECT_DIR$/GetHists.py" />
       </list>
     </option>
@@ -138,6 +127,23 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="proprocessor" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/GenerateSpriteSheet.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="GetPortraits" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="proprocessor" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/GetPortraits.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -276,16 +282,18 @@
       <option name="USE_KEYWORD" value="false" />
       <method />
     </configuration>
-    <list size="3">
+    <list size="4">
       <item index="0" class="java.lang.String" itemvalue="Python.GetThumbs" />
       <item index="1" class="java.lang.String" itemvalue="Python.GetHists" />
       <item index="2" class="java.lang.String" itemvalue="Python.GenerateSpriteSheet" />
+      <item index="3" class="java.lang.String" itemvalue="Python.GetPortraits" />
     </list>
     <recent_temporary>
-      <list size="3">
+      <list size="4">
         <item index="0" class="java.lang.String" itemvalue="Python.GetHists" />
-        <item index="1" class="java.lang.String" itemvalue="Python.GenerateSpriteSheet" />
-        <item index="2" class="java.lang.String" itemvalue="Python.GetThumbs" />
+        <item index="1" class="java.lang.String" itemvalue="Python.GetPortraits" />
+        <item index="2" class="java.lang.String" itemvalue="Python.GenerateSpriteSheet" />
+        <item index="3" class="java.lang.String" itemvalue="Python.GetThumbs" />
       </list>
     </recent_temporary>
   </component>
@@ -340,11 +348,13 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/GenerateSpriteSheet.py">
+    <entry file="file://$PROJECT_DIR$/GetHists.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -354,22 +364,36 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/GenerateSpriteSheet.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/GetThumbs.py" />
     <entry file="file://$PROJECT_DIR$/GetThumbs.py" />
     <entry file="file://$PROJECT_DIR$/GenerateSpriteSheet.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="28" column="43" selection-start-line="28" selection-start-column="43" selection-end-line="28" selection-end-column="43" />
+        <state relative-caret-position="323">
+          <caret line="31" column="56" selection-start-line="31" selection-start-column="56" selection-end-line="31" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GetPortraits.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="14" selection-end-column="13" />
           <folding>
-            <element signature="e#0#10#0" expanded="true" />
+            <element signature="e#0#17#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/GetHists.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="21" selection-end-column="26" />
+        <state relative-caret-position="323">
+          <caret line="28" column="38" selection-start-line="28" selection-start-column="38" selection-end-line="28" selection-end-column="38" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>

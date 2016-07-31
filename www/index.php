@@ -14,7 +14,10 @@
     }
     #controls {
       color: #eee;
-      float: right;
+      position: absolute;
+      right: 0px;
+      width: 200px;
+      top: 0px;
       padding: 10px;
     }
     #controls h1, #controls h2 {
@@ -56,7 +59,7 @@
   var renderWidth = $(window).width() * 0.75;
   var renderHeight = $(window).height();
   var renderMiddle = { x: renderWidth / 2, y: renderHeight / 2 };
-  var renderer = PIXI.autoDetectRenderer(renderWidth, renderHeight, {backgroundColor : 0x000000});
+  var renderer = PIXI.autoDetectRenderer($(window).width(), $(window).height(), {backgroundColor : 0x000000});
   document.body.appendChild(renderer.view);
 
   // create the root of the scene graph
@@ -115,9 +118,21 @@
           this.displayGroup = standardLayer;
         })
         .on('click', function() {
+          if (features[this.featureId].label == null)
+            features[this.featureId].label = 'No additional information about this portrait.';
+          if (features[this.featureId].title == null)
+            features[this.featureId].title = 'Untitled';
+          if (features[this.featureId].artist == null)
+            features[this.featureId].artist = 'Unknown';
+          if (features[this.featureId].subject == null)
+            features[this.featureId].subject = 'Unknown';
           $('#portrait_title').text(features[this.featureId].title);
           $('#portrait_info').html(
-            '<img style="max-width: 300px; max-height: 450px; float: left;" src="' + features[this.featureId].url + '"/><p>' + features[this.featureId].label + '</p>'
+            '<img style="max-width: 300px; max-height: 400px; float: left;" src="' + features[this.featureId].url + '"/>' +
+              '<b>Title:</b> ' + features[this.featureId].title + '<br/>' +
+              '<b>Artist:</b> ' + features[this.featureId].artist + '<br/>' +
+              '<b>Subject:</b> ' + features[this.featureId].subject + '<br/>' +
+              features[this.featureId].label
           );
           $('#portrait_content').text(features[this.featureId].title);
           $('#myModal').modal();

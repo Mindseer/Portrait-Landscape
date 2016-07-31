@@ -123,17 +123,28 @@
           if (features[this.featureId].title == null)
             features[this.featureId].title = 'Untitled';
           if (features[this.featureId].artist == null)
-            features[this.featureId].artist = 'Unknown';
+            features[this.featureId].artist = ['Unknown'];
           if (features[this.featureId].subject == null)
-            features[this.featureId].subject = 'Unknown';
+            features[this.featureId].subject = ['Unknown'];
           $('#portrait_title').text(features[this.featureId].title);
           $('#portrait_info').html(
             '<img style="max-width: 300px; max-height: 400px; float: left;" src="' + features[this.featureId].url + '"/>' +
               '<b>Title:</b> ' + features[this.featureId].title + '<br/>' +
-              '<b>Artist:</b> ' + features[this.featureId].artist + '<br/>' +
-              '<b>Subject:</b> ' + features[this.featureId].subject + '<br/>' +
-              features[this.featureId].label
+              '<b>Artist:</b> ' + features[this.featureId].artist.join(', ') + '<br/>' +
+              '<b>Subject:</b> ' + features[this.featureId].subject.join(', ') + '<br/><br/>' +
+              features[this.featureId].label + '<br/><h3>Related news</h3><div id="portrait_news">Loading news...</div>'
           );
+          $.getJSON("http://search.abc.net.au/s/search.json?query=" + features[this.featureId].subject.join(' ') + "&collection=abcall_meta&form=simple&callback=?", function(json) {
+            results = json.response.resultPacket.results;
+            $('#portrait_news').html("");
+            if (results.length == 0)
+              $('#portrait_news').html('No relevant news.');
+            for (var t = 0; t < 5 && t < results.length; ++t)
+              $('#portrait_news').append(
+                '<a href="' + results[t].clickTrackingUrl + '">' + results[t].title + '</a><br/>' +
+                '<p>' + results[t].summary + '</p><br/>'
+              );
+          });
           $('#portrait_content').text(features[this.featureId].title);
           $('#myModal').modal();
         });
@@ -258,7 +269,9 @@
         <h4 class="modal-title" id="portrait_title"></h4>
       </div>
       <div class="modal-body" id="portrait_info">
+        <div id="portrait_news"></div>
       </div>
+
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>

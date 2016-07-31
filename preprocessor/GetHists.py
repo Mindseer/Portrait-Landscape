@@ -1,3 +1,4 @@
+import re
 import cv2
 import os
 import json
@@ -23,12 +24,26 @@ for portrait in tree.iter('portrait'):
             file_json = {'id': current_filename, 'brightness': brightness}
             for feature in portrait.iter('title'):
                 file_json["title"] = feature.text
+            for artist in portrait.iter('artists'):
+                file_json["artist"] = []
+                for feature in artist.iter('person'):
+                    file_json["artist"] = file_json["artist"] + [feature.text]
+            for subject in portrait.iter('subjects'):
+                file_json["subject"] = []
+                for feature in subject.iter('person'):
+                    file_json["subject"] = file_json["subject"] + [feature.text]
             for feature in portrait.iter('label'):
                 file_json["label"] = feature.text
             for feature in image.iter('fileURL'):
                 file_json["url"] = feature.text
             for feature in portrait.iter('datecreated'):
-                file_json["date_created"] = feature.text
+                file_json["date_created"] = ""
+                try:
+                    re_res = re.match(".*([0-9]{4}).*", feature.text)
+                    if re_res:
+                        file_json["date_created"] = re_res.group(1)
+                except:
+                    print(feature.text)
             for feature in portrait.iter('media'):
                 file_json["media"] = feature.text
             files_json = files_json + [file_json]
